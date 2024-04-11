@@ -44,12 +44,12 @@
   };
 
   
-  fileSystems = {
-    "/mnt/paperless_data" = {
-      device = "/dev/disk/by-uuid/223d264f8-2a7e-4ab6-beae-b69ba2ad67e7";
-      fsType = "ext4";
-    };
-  };
+#  fileSystems = {
+#    "/mnt/paperless_data" = {
+#      device = "/dev/disk/by-uuid/223d264f8-2a7e-4ab6-beae-b69ba2ad67e7";
+#      fsType = "ext4";
+#    };
+#  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
