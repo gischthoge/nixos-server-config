@@ -5,18 +5,16 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./samba.nix
+      ./paperless.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = false;
-  
 
   networking = {
-    hostName = "nixNAS"; # Define your hostname.
-    hostId = "aec12eae";
+    hostName = "paperless"; # Define your hostname.
+    hostId = "103b7a74";
     firewall.enable = true;
     firewall.allowPing = true;
   };
@@ -47,16 +45,8 @@
 
   
   fileSystems = {
-    "/mnt/michael_docs" = { 
-      device = "/dev/disk/by-uuid/8862479b-a424-41f5-a896-47dee36c0c81";
-      fsType = "ext4";
-    };
-    "/mnt/lkv_docs" = {
-      device = "/dev/disk/by-uuid/539e617c-d650-4a83-95c0-771189b9827a";
-      fsType = "ext4";
-    };
-    "/mnt/schaefergbr_docs" = {
-      device = "/dev/disk/by-uuid/d32bd0db-78ce-4c09-a4e5-9384db6e6ca7";
+    "/mnt/paperless_data" = {
+      device = "/dev/disk/by-uuid/223d264f8-2a7e-4ab6-beae-b69ba2ad67e7";
       fsType = "ext4";
     };
   };
